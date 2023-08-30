@@ -15,12 +15,18 @@ const assignment = {};
  * @returns number the sum of the numbers from 1 to destination
  */
 function sumOfNumbersTo(destination) {
-    let sum = 0;
+    let sum = 0
+    if (destination > 1 && destination !== undefined) {
+        for (let i = 0; i <= destination; i++) {
+            sum += i;
+        }
+    } else {
+        alert("destination must be greater than 1");
+    }
     return sum
 }
 
-
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
+ assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 /**
  * Challenge - 2
@@ -35,9 +41,22 @@ function sumOfNumbersTo(destination) {
 function countEvenNumbersWithin(destination) {
     // Write your code here
     // get the number from 1 to destination
+    
     let sum = 0;
     let count = 0;
     let arrayOfEvenNumbers = [];
+    if (destination > 1 && destination !== undefined) {
+        for (let i = 1; i <= destination; i++) {
+            if (i % 2 === 0) {
+                arrayOfEvenNumbers.push(i);
+              sum += i;
+              count++;
+            }
+          }
+    } else {
+        
+        alert("destination must be greater than 1")
+    }
 
     return {
         // property value shorthand
@@ -48,8 +67,7 @@ function countEvenNumbersWithin(destination) {
         arrayOfEvenNumbers
     };
 }
-
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
  * Challenge - 3
